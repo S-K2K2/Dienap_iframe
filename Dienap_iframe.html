@@ -12,7 +12,7 @@
     //<link rel="stylesheet" href="https://code.highcharts.com/css/highcharts.css">
     <style>
         .highcharts-figure,
-        .highcharts-data-table table {
+                .highcharts-data-table table {
             min-width: 320px;
             max-width: 1000px;
             margin: 1em auto;
@@ -83,7 +83,7 @@
 </head>
 <body>
     <figure class="highcharts-figure">
-        <div id="container"></div>
+        <div id="container" style="height: 1000px"></div>
         <p class="highcharts-description">
             
         </p>
@@ -102,7 +102,9 @@
             needRealtimeConfigs: true,         /* Cần giá trị hiện thời */
             needHistoryConfigs: true,          /* Cần giá trị lịch sử */
             needActions: false,   
-            mobileHeight: 1000,                 /* Thiết lập chiều cao hiển thị trên mobile app E-Ra, mặc đinh 300px */
+            mobileHeight: 1000, /* Thiết lập chiều cao hiển thị trên mobile app E-Ra */
+            
+
         
 
         onConfiguration: (configuration) => {
