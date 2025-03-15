@@ -35,7 +35,7 @@
         .highcharts-data-table caption {
             padding: 1em 0;
             font-size: 1.2em;
-            color: #555;
+            color: #e91414;
         }
 
         .highcharts-data-table th {
@@ -51,11 +51,11 @@
 
         .highcharts-data-table thead tr,
         .highcharts-data-table tr:nth-child(even) {
-            background: #a82c72;
+            background: #eb4504;
         }
 
         .highcharts-data-table tr:hover {
-            background: #829DD8;
+            background: #ee3507;
         }
 
         .cell {
@@ -83,10 +83,9 @@
 </head>
 <body>
     <figure class="highcharts-figure">
-        <div id="container" style="height: 500px"></div>
-
+        <div id="container"></div>
         <p class="highcharts-description">
-            
+            Chart showing sensor1s data updating every second.
         </p>
         <button id="exportButton">Export to Excel</button>
     </figure>
@@ -139,7 +138,7 @@
             for (let i = -19; i <= 0; i += 1) {
                 data.push({
                     x: time + i * 1000,
-                    y: sensor1Value
+                    y: 0 // Giá trị mặc định cho dữ liệu ban đầu
                 });
             }
             return data;
@@ -182,16 +181,16 @@
 
             yAxis: {
                 title: {
-                    text: 'Dien ap'
+                    text: 'Dienap'
                 },
                 min: 0, // Giá trị tối thiểu của trục Y
-                max: 300, // Giá trị tối đa của trục Y
+                max: 270, // Giá trị tối đa của trục Y
                 tickInterval: 10, // Khoảng cách giữa các dấu vạch trên trục Y
                 plotLines: [
                     {
                         value: 0,
                         width: 1,
-                        color: '#808080'
+                        color: '#FF0000'
                     }
                 ]
             },
@@ -211,7 +210,7 @@
 
             series: [
                 {
-                    name: 'Dien ap',
+                    name: 'Dienap',
                     lineWidth: 2,
                     color: Highcharts.getOptions().colors[6],
                     data,
@@ -238,8 +237,8 @@
             })));
 
             const wb = XLSX.utils.book_new();
-            XLSX.utils.book_append_sheet(wb, ws, 'Dien ap');
-            XLSX.writeFile(wb, 'Dien ap_data.xlsx');
+            XLSX.utils.book_append_sheet(wb, ws, 'Dienap');
+            XLSX.writeFile(wb, 'Dienap_data.xlsx');
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
