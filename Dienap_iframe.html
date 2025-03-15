@@ -8,9 +8,11 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://www.unpkg.com/@eohjsc/era-widget@1.0.14/src/index.js"></script>
+    //<link rel="stylesheet" href="https://code.highcharts.com/css/highcharts.css">
     <style>
         .highcharts-figure,
-                .highcharts-data-table table {
+        .highcharts-data-table table {
             min-width: 320px;
             max-width: 1000px;
             margin: 1em auto;
@@ -80,11 +82,8 @@
     </style>
 </head>
 <body>
-   
-    <script src="https://www.unpkg.com/@eohjsc/era-widget@1.0.14/src/index.js"></script>
-    //<link rel="stylesheet" href="https://code.highcharts.com/css/highcharts.css">
     <figure class="highcharts-figure">
-        <div id="container" style="height: 1000px"></div>
+        <div id="container"></div>
         <p class="highcharts-description">
             
         </p>
@@ -99,26 +98,15 @@
         let sensor1Value = 0; // Khởi tạo giá trị giá trị mặc định
         const dataBuffer = [];
 
-        eraWidget.init({
-            needRealtimeConfigs: true,         /* Cần giá trị hiện thời */
-            needHistoryConfigs: true,          /* Cần giá trị lịch sử */
-            needActions: false,   
-            mobileHeight: 1000, /* Thiết lập chiều cao hiển thị trên mobile app E-Ra */
-            
-
-        
-
-        onConfiguration: (configuration) => {
+        eraWidget.onConfiguration((configuration) => {
             config = configuration.realtime_configs[0];
-        },
+        });
 
-        onValues: (values) => {
+        eraWidget.onValues((values) => {
             const input = document.getElementById('Dien ap');
             sensor1Value = values[config.id].value; // Giả sử values[config.id].value là giá trị thực tế
             input.checked = values[config.id].value > 0; // Đặt trạng thái của checkbox dựa trên giá trị
-        }
-    });
-
+        });
 
         eraWidget.ready();
 
