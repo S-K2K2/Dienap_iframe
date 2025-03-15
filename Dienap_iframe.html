@@ -99,19 +99,19 @@
         const dataBuffer = [];
 
         eraWidget.init({
-           // needRealtimeConfigs: true,         /* Cần giá trị hiện thời */
-           // needHistoryConfigs: true,          /* Cần giá trị lịch sử */
-           // needActions: false,   
+            needRealtimeConfigs: true,         /* Cần giá trị hiện thời */
+            needHistoryConfigs: true,          /* Cần giá trị lịch sử */
+            needActions: false,   
             mobileHeight: 1000, /* Thiết lập chiều cao hiển thị trên mobile app E-Ra */
             
 
         
 
-        eraWidget: (configuration) => {
+        onConfiguration: (configuration) => {
             config = configuration.realtime_configs[0];
         },
 
-        eraWidget: (values) => {
+        onValues: (values) => {
             const input = document.getElementById('Dien ap');
             sensor1Value = values[config.id].value; // Giả sử values[config.id].value là giá trị thực tế
             input.checked = values[config.id].value > 0; // Đặt trạng thái của checkbox dựa trên giá trị
@@ -149,7 +149,7 @@
             for (let i = -19; i <= 0; i += 1) {
                 data.push({
                     x: time + i * 1000,
-                    y: sensor1Value
+                    y: 0
                 });
             }
             return data;
