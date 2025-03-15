@@ -157,7 +157,7 @@
             },
 
             title: {
-                text: 'DIEN AP'
+                text: 'ĐIỆN ÁP'
             },
 
             accessibility: {
@@ -210,7 +210,7 @@
 
             series: [
                 {
-                    name: 'Dienaps',
+                    name: 'Dienap',
                     lineWidth: 2,
                     color: Highcharts.getOptions().colors[6],
                     data,
@@ -233,11 +233,11 @@
         document.getElementById('exportButton').addEventListener('click', function () {
             const ws = XLSX.utils.json_to_sheet(dataBuffer.map(point => ({
                 Time: (new Date(point[0])).toLocaleString(),
-                sensor1: point[1]
+                Dienap: point[1]
             })));
 
             const wb = XLSX.utils.book_new();
-            XLSX.utils.book_append_sheet(wb, ws, 'Dienaps');
+            XLSX.utils.book_append_sheet(wb, ws, 'Dienap');
             XLSX.writeFile(wb, 'Dienap_data.xlsx');
         });
     </script>
