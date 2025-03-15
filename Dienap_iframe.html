@@ -157,7 +157,7 @@
             },
 
             title: {
-                text: 'Live sensor1 Data'
+                text: 'ĐIỆN ÁP'
             },
 
             accessibility: {
@@ -181,10 +181,10 @@
 
             yAxis: {
                 title: {
-                    text: 'sensor1'
+                    text: 'Điện áp'
                 },
                 min: 0, // Giá trị tối thiểu của trục Y
-                max: 260, // Giá trị tối đa của trục Y
+                max: 500, // Giá trị tối đa của trục Y
                 tickInterval: 10, // Khoảng cách giữa các dấu vạch trên trục Y
                 plotLines: [
                     {
@@ -210,7 +210,7 @@
 
             series: [
                 {
-                    name: 'sensor1s',
+                    name: 'Điện áp,
                     lineWidth: 2,
                     color: Highcharts.getOptions().colors[6],
                     data,
@@ -238,7 +238,7 @@
 
             const wb = XLSX.utils.book_new();
             XLSX.utils.book_append_sheet(wb, ws, 'sensor1s');
-            XLSX.writeFile(wb, 'sensor1_data.xlsx');
+            XLSX.writeFile(wb, 'Dienap_data.xlsx');
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
