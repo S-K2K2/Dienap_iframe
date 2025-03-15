@@ -98,16 +98,10 @@
         let sensor1Value = 0; // Khởi tạo giá trị giá trị mặc định
         const dataBuffer = [];
         eraWidget.init({       
-            needRealtimeConfigs: true,         /* Cần giá trị hiện thời */
-            needHistoryConfigs: true,          /* Cần giá trị lịch sử */
-            needActions: true,                 /* Cần các hành động (ví dụ Bật/Tắt đèn) */
-            maxRealtimeConfigsCount: 3,        /* Số lượng tối đa giá trị hiện thời */
-            maxHistoryConfigsCount: 1,         /* Số lượng tối đa giá trị lịch sử */
-            maxActionsCount: 2,                /* Số lượng tối đa các hành động có thể kích hoạt */
-            minRealtimeConfigsCount: 0,        /* Số lượng tối thiểu giá trị hiện thời */
-            minHistoryConfigsCount: 0,         /* Số lượng tối thiểu giá trị lịch sử */
-            minActionsCount: 0,                /* Số lượng tối thiểu hành động */
-            mobileHeight: 1000,                 /* Thiết lập chiều cao hiển thị trên mobile app E-Ra, mặc đinh 300px */
+            needRealtimeConfigs: true, // Cần giá trị realtime
+            needHistoryConfigs: true, // Không cần giá trị lịch sử (tùy chọn)
+            needActions: false, // Không cần hành động (tùy chọn)
+            mobileHeight: 1000,  /* Thiết lập chiều cao hiển thị trên mobile app E-Ra, mặc đinh 600px */
         
         eraWidget:onConfiguration((configuration) => {
             config = configuration.realtime_configs[0];
@@ -120,9 +114,8 @@
             input.checked = values[config.id].value > 0; // Đặt trạng thái của checkbox dựa trên giá trị
         }),
         
-    
-        eraWidget:ready(),
     });
+        eraWidget.ready();
         
 
         // Existing Highcharts code
