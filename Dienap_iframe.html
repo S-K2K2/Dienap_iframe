@@ -157,7 +157,7 @@
             },
 
             title: {
-                text: 'ĐIỆN ÁP'
+                text: 'DIEN AP'
             },
 
             accessibility: {
@@ -181,7 +181,7 @@
 
             yAxis: {
                 title: {
-                    text: 'Điện áp'
+                    text: 'Dienap'
                 },
                 min: 0, // Giá trị tối thiểu của trục Y
                 max: 500, // Giá trị tối đa của trục Y
@@ -210,7 +210,7 @@
 
             series: [
                 {
-                    name: 'Điện áp,
+                    name: 'Dienaps',
                     lineWidth: 2,
                     color: Highcharts.getOptions().colors[6],
                     data,
@@ -237,7 +237,7 @@
             })));
 
             const wb = XLSX.utils.book_new();
-            XLSX.utils.book_append_sheet(wb, ws, 'sensor1s');
+            XLSX.utils.book_append_sheet(wb, ws, 'Dienaps');
             XLSX.writeFile(wb, 'Dienap_data.xlsx');
         });
     </script>
