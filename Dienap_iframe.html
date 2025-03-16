@@ -14,12 +14,12 @@
         .highcharts-figure,
         .highcharts-data-table table {
             min-width: 320px;
-            max-width: 1000px;
+            max-width: 600x;
             margin: 1em auto;
         }
 
         #container {
-            height: 400px;
+            height: 200px;
         }
 
         .highcharts-data-table table {
@@ -181,9 +181,10 @@
                 title: {
                     text: 'Dienap'
                 },
+                opposite: false, // Đảm bảo trục Y ở bên trái
                 min: 0, // Giá trị tối thiểu của trục Y
                 max: 270, // Giá trị tối đa của trục Y
-                tickInterval: 10, // Khoảng cách giữa các dấu vạch trên trục Y
+                tickInterval: 20, // Khoảng cách giữa các dấu vạch trên trục Y
                 plotLines: [
                     {
                         value: 0,
