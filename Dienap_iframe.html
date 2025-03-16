@@ -14,7 +14,7 @@
         .highcharts-figure,
         .highcharts-data-table table {
             min-width: 320px;
-            max-width: 1500px;
+            max-width: 1000px;
             margin: 1em auto;
         }
 
@@ -133,10 +133,10 @@
             const data = [];
             const time = (new Date().getTime());
 
-            for (let i = -999; i <= 0; i += 1) {
+            for (let i = -19; i <= 0; i += 1) {
                 data.push({
                     x: time + i * 1000,
-                    y: 0 // Giá trị mặc định cho dữ liệu ban đầu
+                    y: sensor1Value
                 });
             }
             return data;
