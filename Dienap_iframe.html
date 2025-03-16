@@ -210,7 +210,8 @@
                 {
                     name: 'Dienap',
                     lineWidth: 2,
-                    color: Highcharts.getOptions().colors[2],
+                    //color: Highcharts.getOptions().colors[2],
+                    color: '#FF0000', // Đổi màu đường thành đỏ
                     data,
                     fillColor: {
                         linearGradient: {
@@ -220,8 +221,8 @@
                             y2: 1
                         },
                         stops: [
-                            [0, Highcharts.getOptions().colors[2]],
-                            [1, Highcharts.color(Highcharts.getOptions().colors[2]).setOpacity(0).get('rgba')]
+                            [0, '#FF0000'],
+                            [1, Highcharts.color('#FF0000').setOpacity(0).get('rgba')]
                         ]
                     }
                 } 
