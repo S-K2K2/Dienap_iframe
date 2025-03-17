@@ -82,9 +82,10 @@
     </style>
 </head>
 <body>
-    <figure class="highcharts-figure" style="height: 1000px;">
-        <div id="container" style="height: 500px;"></div>
-              <button id="exportButton">Export to Excel</button>
+    <figure class="highcharts-figure">
+        <div id="container"></div>
+       
+        <button id="exportButton">Export to Excel</button>
     </figure>
 
     <input type="checkbox" id="Dien ap"></input>
@@ -94,12 +95,10 @@
         let config = null;
         let sensor1Value = 0; // Khởi tạo giá trị giá trị mặc định
         const dataBuffer = [];
-        eraWidget.init({
-            mobileHeight: 1000, })
 
-        onConfiguration:(configuration) => {
+        eraWidget.onConfiguration((configuration) => {
             config = configuration.realtime_configs[0];
-        };
+        });
 
         eraWidget.onValues((values) => {
             const input = document.getElementById('Dien ap');
@@ -134,7 +133,7 @@
             const data = [];
             const time = (new Date().getTime());
 
-            for (let i = -19; i <= 0; i += 1) {
+            for (let i = -200; i <= 0; i += 1) {
                 data.push({
                     x: time + i * 1000,
                     y: sensor1Value
